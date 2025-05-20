@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="stylesheet" href="./output.css" />
     <title>Forest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-verde-800 font-sans">
+  <body class="bg-verde-800 font-sans" >
     <div class="container mt-4 flex justify-center md:justify-start">
       <div class="inline-flex items-center rounded-md bg-verde-900">
         <span
-          class="size-2 bg-verde-300 block rounded-full relative -left-1"
+          class="neon size-2 block relative -left-1"
         ></span>
         <div class="flex text-verde-300 divide-x-2 divide-verde-800">
           <div class="px-4 py-2 capitalize" id="dia">segunda</div>
@@ -25,34 +28,43 @@
       <a href="./">
         <img src="./img/forest.svg" alt="Forest" />
       </a>
-      <nav>
-        <ul class="text-white text-xl flex flex-wrap gap-8">
-          <li>
+      <nav id="mobile-menu" class="hidden items-center lg:block z-40 max-lg:fixed max-lg:w-full max-lg:inset-0">
+        <div class="fixed lg:hidden inset-0 bg-verde-950/40 backdrop-blur-md"></div>
+        <ul class="text-white text-2xl lg:text-xl lg:flex lg:flex-wrap lg:gap-8  max-lg:divide-y-2 max-lg:divide-white/10  max-lg:z-[100] max-lg:absolute max-lg:p-8 max-lg:w-full">
+          <li class="animate-slide-in opacity-0 animate-1">
             <a
               href="#acomodacoes"
-              class="hover:underline hover:underline-offset-8"
+              class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8"
               >Acomodações</a
             >
           </li>
-          <li>
-            <a href="#eventos" class="hover:underline hover:underline-offset-8"
+          <li class="animate-slide-in opacity-0 animate-2">
+            <a href="#eventos" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8"
               >Eventos</a
             >
           </li>
-          <li>
+          <li class="animate-slide-in opacity-0 animate-3">
             <a
-              href="#experiencia"
-              class="hover:underline hover:underline-offset-8"
+              href="#experiencias"
+              class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8"
               >Experiências</a
             >
           </li>
-          <li>
-            <a href="#contato" class="hover:underline hover:underline-offset-8"
+          <li class="animate-slide-in opacity-0 animate-4">
+            <a href="#contato" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8"
               >Contato</a
             >
           </li>
         </ul>
       </nav>
+      <button id="mobile-button"class=" btn flex items-center gap-3 text-verde-900 py-2 rounded-full lg:hidden">
+        Menu
+        <span class="h-3 w-4 flex flex-col justify-between *:h-0.5 *:rounded-md *:bg-verde-800">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
     </header>
 
     <main class="container text-white">
@@ -61,17 +73,29 @@
       >
         <img
           class="absolute inset-0 -z-10 size-full object-cover"
-          src="img/floresta.jpg"
+          src="./img/floresta.jpg"
           alt="Floresta"
         />
+        <video 
+          id="video" 
+          src="./img/video_chuva.mp4" 
+          muted 
+          autoplay 
+          loop 
+          width="1280" 
+          height="720" 
+          class="absolute inset-0 -z-10 size-full object-cover animate-fade-in"
+        ></video>
         <div
           class="bg-verde-950/60 sm:bg-verde-950 flex flex-col items-start gap-2 p-4 rounded-xl sm:inline-flex sm:items-center mb-8 sm:gap-8 sm:py-1 sm:pr-1 sm:pl-4 sm:rounded-full sm:flex-row"
         >
-          vagas para dezenmbro abertas
+          vagas para dezembro abertas
           <a
-            class="bg-verde-400 text-verde-900 py-2 p-4 inline-block rounded-full"
+            class="btn inline-flex items-center gap-2"
             href=""
-            >Reserve Hoje</a
+            >Reserve Hoje
+              <img src="./img/seta.svg" alt="Seta para a direita" />
+            </a
           >
         </div>
         <h1
@@ -102,7 +126,7 @@
     <!-- Acomodações -->
     <section
       id="acomodacoes"
-      class="container grid lg:grid-cols-[2fr_3fr] gap-8 mb-12 pt-16 sm:mb-16"
+      class="radial-gradient container grid lg:grid-cols-[2fr_3fr] gap-8 mb-12 pt-16 sm:mb-16"
     >
       <div
         class="content-end bg-[url('./img/padrao.svg')] bg-no-repeat bg-contain bg-left-bottom"
@@ -114,23 +138,23 @@
           class="text-gray-200 *:flex *:items-center *:gap-4 space-y-4 sm:text-xl"
         >
           <li>
-            <span class="h-0.5 w-6 inline-block bg-verde-400"></span>
+            <span class="h-0.5 w-6 inline-block neon"></span>
             Experimente a natureza de perto
           </li>
           <li>
-            <span class="h-0.5 w-6 inline-block bg-verde-400"></span> Conecte-se
+            <span class="h-0.5 w-6 inline-block neon"></span> Conecte-se
             com a natureza
           </li>
           <li>
-            <span class="h-0.5 w-6 inline-block bg-verde-400"></span>
+            <span class="h-0.5 w-6 inline-block neon"></span>
             Desconecte-se do digital
           </li>
           <li>
-            <span class="h-0.5 w-6 inline-block bg-verde-400"></span>
+            <span class="h-0.5 w-6 inline-block neon"></span>
             Obeserve a vida selvagem
           </li>
           <li>
-            <span class="h-0.5 w-6 inline-block bg-verde-400"></span>
+            <span class="h-0.5 w-6 inline-block neon"></span>
             Escolha sua acabine preferida
           </li>
         </ul>
@@ -203,7 +227,7 @@
             </p>
 
             <a
-              class="justify-self-start self-end bg-verde-400 text-verde-900 py-2 p-4 inline-block rounded-full"
+              class="justify-self-start self-end btn"
               href=""
               >Reservar 23/03</a
             >
@@ -224,7 +248,7 @@
               </p>
 
               <a
-                class="justify-self-start self-end bg-verde-400 text-verde-900 py-2 p-4 inline-block rounded-full"
+                class="justify-self-start self-end btn"
                 href=""
                 >Reservar 15/04</a
               >
@@ -248,7 +272,7 @@
               </p>
 
               <a
-                class="justify-self-start self-end bg-verde-400 text-verde-900 py-2 p-4 inline-block rounded-full"
+                class="justify-self-start self-end btn"
                 href=""
                 >Reservar 18/08</a
               >
@@ -273,7 +297,7 @@
           Escolha sua próxima aventura
         </h2>
         <h3
-          class="text-white text-xl flex items-center gap-4 before:h-0.5 before:w-6 before:bg-verde-400 before:transition-[width] hover:before:w-10"
+          class="text-white text-xl flex items-center gap-4 before:h-0.5 before:w-6 before:neon before:transition-[width] hover:before:w-10"
         >
           Observação Noturna
         </h3>
@@ -282,7 +306,7 @@
         </p>
 
         <h3
-          class="text-white text-xl flex items-center gap-4 before:h-0.5 before:w-6 before:bg-verde-400 before:transition-[width] hover:before:w-10"
+          class="text-white text-xl flex items-center gap-4 before:h-0.5 before:w-6 before:neon before:transition-[width] hover:before:w-10"
         >
           Vida Selvagem
         </h3>
@@ -291,7 +315,7 @@
         </p>
 
         <h3
-          class="text-white text-xl flex items-center gap-4 before:h-0.5 before:w-6 before:bg-verde-400 before:transition-[width] hover:before:w-10"
+          class="text-white text-xl flex items-center gap-4 before:h-0.5 before:w-6 before:neon before:transition-[width] hover:before:w-10"
         >
           Canoagem
         </h3>
@@ -361,7 +385,7 @@
             class="grid flex-1 gap-4 bg-verde-900 p-6 sm:p-8 rounded-xl transition-transform sm:hover:-translate-y-2"
           >
             <div
-              class="bg-verde-400 rounded-full size-10 flex items-center justify-center"
+              class="neon size-10 flex items-center justify-center"
             >
               <img src="./img/manha.svg" alt="" />
             </div>
@@ -376,7 +400,7 @@
             class="grid flex-1 gap-4 bg-verde-900 p-6 sm:p-8 rounded-xl sm:translate-y-12 sm:hover:translate-y-10"
           >
             <div
-              class="bg-verde-400 rounded-full size-10 flex items-center justify-center"
+              class="neon size-10 flex items-center justify-center"
             >
               <img src="./img/dia.svg" alt="" />
             </div>
@@ -391,7 +415,7 @@
             class="grid flex-1 gap-4 bg-verde-900 p-6 sm:p-8 rounded-xl transition-transform sm:hover:-translate-y-2"
           >
             <div
-              class="bg-verde-400 rounded-full size-10 flex items-center justify-center"
+              class="neon size-10 flex items-center justify-center"
             >
               <img src="./img/noite.svg" alt="" />
             </div>
@@ -415,19 +439,19 @@
         </p>
         <div class="grid gap-4">
           <div>
-            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>
+            <span class="h-0.5 w-6 neon inline-block"></span>
             <h2 class="mb-2 text-2xl text-verde-300 font-serif">Base</h2>
             <p class="text-gray-300">
               Rua da Mata, 123 - Floresta Nacional - SP
             </p>
           </div>
           <div>
-            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>
+            <span class="h-0.5 w-6 neon inline-block"></span>
             <h2 class="mb-2 text-2xl text-verde-300 font-serif">E-Mail</h2>
             <p class="text-gray-300">contato@forest.com</p>
           </div>
           <div>
-            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>
+            <span class="h-0.5 w-6 neon inline-block"></span>
             <h2 class="mb-2 text-2xl text-verde-300 font-serif">Telefone</h2>
             <p class="text-gray-300">(16) 99999-9999</p>
           </div>
@@ -439,7 +463,7 @@
           <input
             id="nome"
             name="nome"
-            class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
+            class="input"
             type="text"
           />
         </div>
@@ -449,7 +473,7 @@
             <input
               id="email"
               name="email"
-              class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
+              class="input"
               type="email"
             />
           </div>
@@ -458,7 +482,7 @@
             <input
               id="telefone"
               name="telefone"
-              class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
+              class="input"
               placeholder="(16) 99999-9999"
               type="text"
             />
@@ -470,17 +494,17 @@
               id="mensagem"
               name="mensagem"
               rows="5"
-              class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900 resize-none"
+              class="input resize-none"
               type="text"
             ></textarea>
           </div>
-          <button class="place-self-end bg-verde-400 text-verde-900 py-2 p-4 inline-block rounded-full">Enviar E-mail</button>
+          <button class="place-self-end b inline-block btn">Enviar E-mail</button>
       </form>
     </section>
 
     <!-- Parceiros -->
      <section class="container mb-12 sm:mb-16">
-      <ul class="*:*:max-h-8 flex flex-col items-center py-4 max-sm:divide-y-2 max-sm:divide-verde-900 *:p-4 sm:flex-row sm:gap-8 sm:py-8 sm:border-b-2 sm:border-t-2 border-verde-900">
+      <ul class="*:*:max-h-8 flex flex-col items-center justify-center py-4 max-sm:divide-y-2 max-sm:divide-verde-900 *:p-4 sm:flex-row sm:gap-8 sm:py-8 sm:border-b-2 sm:border-t-2 border-verde-900">
         <li><img src="img/parceiros/caravan.svg" alt="Caraven" /></li>
         <li><img src="img/parceiros/dogs.svg" alt="Dogs" /></li>
         <li><img src="img/parceiros/wildbeast.svg" alt="Wildbeast" /></li>
@@ -515,5 +539,38 @@
         </ul>
       </div>
      </footer>
+
+     <script>
+      const mobileButton = document.getElementById('mobile-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+      });
+
+      mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');  
+      });
+
+      const video = document.getElementById('video');
+      const temperatura = document.getElementById('temperatura');
+      const tempo = document.getElementById('tempo');
+      const dia = document.getElementById('dia');
+
+      const random = Math.floor(Math.random() * 10) + 20;
+      temperatura.innerText = `${random}º`;
+      console.log('random', random);  
+      tempo.innerText=  random < 25 ? `☁️ ${random + 5}%` : '☀️';
+
+      const date = new Date();
+      dia.innerText = date.toLocaleDateString('pt-BR', {
+        weekday: 'long',
+      });
+
+      video.src = random < 25 ? './img/video_chuva.mp4' : './img/video_sol.mp4';
+
+     </script>
   </body>
 </html>
